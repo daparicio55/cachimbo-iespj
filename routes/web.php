@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\CalificacioneController;
 use App\Http\Controllers\DashboardController;
 use App\Livewire\Settings\Appearance;
 use App\Livewire\Settings\Password;
@@ -10,8 +11,14 @@ Route::get('/', function () {
     return view('welcome');
 })->name('home');
 
-Route::get('/dashboard',[DashboardController::class,'index'])
-->middleware(['auth', 'verified'])->name('dashboard');  
+
+Route::name('dashboard')->prefix('dashboard')->group(function(){
+    Route::get('/',[DashboardController::class,'index']);
+    Route::get('/calificar/{id}',[CalificacioneController::class,'calficar'])
+    ->name('.calificar');
+})->middleware(['auth', 'verified']);
+
+
 
 
 Route::middleware(['auth'])->group(function () {

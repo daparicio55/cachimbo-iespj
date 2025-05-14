@@ -13,4 +13,6 @@ class DashboardController extends Controller
         $trajes = Traje::get();
         return view('dashboard',compact('trajes'));
     }
+
+    
 }
