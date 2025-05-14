@@ -2,15 +2,21 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Programa;
 use App\Models\Traje;
 use Illuminate\Http\Request;
 
 class CalificacioneController extends Controller
 {
     //
-    public function calficar($id)
+    public function index($id)
     {
         $traje = Traje::find($id);
-        return view('calificaciones.calificar', compact('traje'));
+        $programas = Programa::orderby('nombre','asc')->get();
+        return view('calificaciones.index', compact('traje','programas'));
+    }
+    public function edit(Request $request, $id)
+    {
+        return $request->all();
     }
 }

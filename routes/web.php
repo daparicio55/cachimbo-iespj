@@ -14,8 +14,10 @@ Route::get('/', function () {
 
 Route::name('dashboard')->prefix('dashboard')->group(function(){
     Route::get('/',[DashboardController::class,'index']);
-    Route::get('/calificar/{id}',[CalificacioneController::class,'calficar'])
-    ->name('.calificar');
+    Route::get('/calificar/{id}',[CalificacioneController::class,'index'])
+    ->name('.calificar.index');
+    Route::get('/calificar/{id}/edit',[CalificacioneController::class,'edit'])
+    ->name('.calificar.edit');
 })->middleware(['auth', 'verified']);
 
 

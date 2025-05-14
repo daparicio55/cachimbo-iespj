@@ -6,5 +6,14 @@ use Illuminate\Database\Eloquent\Model;
 
 class Periodo extends Model
 {
-    //
+    protected $fillable = [
+        'nombre',
+        'activo',
+    ];
+
+    public function users()
+    {
+        return $this->belongsToMany(User::class)->withTimestamps();
+    }
+
 }

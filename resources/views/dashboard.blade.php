@@ -7,7 +7,7 @@
         <div class="grid auto-rows-min gap-4 md:grid-cols-3">
 
             @foreach ($trajes as $traje)
-                <a href="{{ route('dashboard.calificar',$traje->id) }}">
+                <a href="{{ route('dashboard.calificar.index',$traje->id) }}">
                     <div class="relative aspect-video overflow-hidden rounded-xl border border-neutral-200 dark:border-neutral-700">
                         {{-- <x-placeholder-pattern class="absolute inset-0 size-full stroke-gray-900/20 dark:stroke-neutral-100/20" /> --}}
                         <div class="absolute inset-0 flex items-center justify-center bg-black bg-opacity-50 text-white">
