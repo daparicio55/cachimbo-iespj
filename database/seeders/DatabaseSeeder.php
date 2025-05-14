@@ -22,6 +22,7 @@ class DatabaseSeeder extends Seeder
             TrajeSeed::class,
             ProgramaSeed::class,
             PeriodoSeed::class,
+            ItemSeed::class,
         ]);
 
         //relacionar los usuarios con los periodos
