@@ -12,32 +12,6 @@ Route::get('/', function () {
     return view('welcome');
 })->name('home');
 
-
-Route::name('dashboard')->prefix('dashboard')->group(function(){
-    Route::get('/',[DashboardController::class,'index']);
-    Route::get('/calificar/{id}',[CalificacioneController::class,'index'])
-    ->name('.calificar.index');
-    Route::get('/calificar/{id}/edit',[CalificacioneController::class,'edit'])
-    ->name('.calificar.edit');
-    Route::put('/calificar/{id}/update',[CalificacioneController::class,'update'])
-    ->name('.calificar.update');
-
-    Route::get('/participantes',[ParticipanteController::class,'index'])
-    ->name('.participantes.index');
-    Route::get('/participantes/create',[ParticipanteController::class,'create'])
-    ->name('.participantes.create');
-    Route::post('/participantes',[ParticipanteController::class,'store'])
-    ->name('.participantes.store');
-
-    Route::delete('/participantes/{id}',[ParticipanteController::class,'destroy'])
-    ->name('.participantes.destroy');
-
-
-})->middleware(['auth', 'verified']);
-
-
-
-
 Route::middleware(['auth'])->group(function () {
     Route::redirect('settings', 'settings/profile');
 
@@ -47,3 +21,28 @@ Route::middleware(['auth'])->group(function () {
 });
 
 require __DIR__.'/auth.php';
+
+Route::get('/dashboard',[DashboardController::class,'index'])
+->middleware(['auth','verified'])
+->name('dashboard');
+
+Route::get('/dashboard/calificar/{id}',[CalificacioneController::class,'index'])
+->middleware(['auth','verified'])
+->name('dashboard.calificar.index');
+Route::get('/dashboard/calificar/{id}/edit',[CalificacioneController::class,'edit'])
+->middleware(['auth','verified'])
+->name('dashboard.calificar.edit');
+Route::put('/dashboard/calificar/{id}/update',[CalificacioneController::class,'update'])
+->middleware(['auth','verified'])
+->name('dashboard.calificar.update');
+
+Route::get('/dashboard/participantes',[ParticipanteController::class,'index'])
+->middleware(['auth','verified'])
+->name('dashboard.participantes.index');
+Route::get('/dashboard/participantes/create',[ParticipanteController::class,'create'])
+->middleware(['auth','verified'])
+->name('dashboard.participantes.create');
+Route::post('/dashboard/participantes',[ParticipanteController::class,'store'])
+->name('dashboard.participantes.store');
+Route::delete('/participantes/{id}',[ParticipanteController::class,'destroy'])
+->name('dashboard.participantes.destroy');

@@ -44,8 +44,7 @@ class ParticipanteController extends Controller
             ]);
         } catch (\Throwable $th) {
             //throw $th;
-            return $th->getMessage();
-            return Redirect::route('dashboard.participantes.create')->with('error','Error al crear el participante');
+            return Redirect::route('dashboard.participantes.index')->with('error','Error al crear el participante');
         }
         return Redirect::route('dashboard.participantes.index')->with('success','Participante creado correctamente');
     }
