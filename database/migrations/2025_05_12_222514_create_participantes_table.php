@@ -18,6 +18,7 @@ return new class extends Migration
             $table->enum('sexo', ['Varon', 'Mujer']);
             $table->foreignId('programa_id')->constrained('programas')->onDelete('cascade');
             $table->foreignId('periodo_id')->constrained('periodos')->onDelete('cascade');
+            $table->unique(['programa_id','periodo_id','sexo']);
             $table->timestamps();
         });
     }
