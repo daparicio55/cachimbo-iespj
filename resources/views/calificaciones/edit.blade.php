@@ -14,6 +14,7 @@
         <form action="{{ route('dashboard.calificar.update',$traje->id) }}" method="post">
             @csrf
             @method('PUT')
+            <input type="text" name="programa" value="{{ $programa->id }}" hidden>
             @foreach ($items_calificacion as $key1 => $grupo)
             <p class="text-center border p-2 bg-stone-500 border-neutral-200 dark:border-neutral-700 text-white text-lg font-bold rounded">
                 {{ $key1 }}
@@ -25,8 +26,18 @@
                             {{ $item['nombre'] }}
                         </h3>
                         <div class="flex flex-col gap-2">
-                            <input type="number" name="calificacion_varon[]" class="text-lg w-1/2 mx-auto mt-2 border border-neutral-200 dark:border-neutral-700 rounded p-2" placeholder="Varon" required value="0">
-                            <input type="number" name="calificacion_mujer[]" class="text-lg w-1/2 mx-auto mt-2 border border-neutral-200 dark:border-neutral-700 rounded p-2" placeholder="Mujer" required value="0">
+                            <div class="w-full flex justify-center items-center gap-2">
+                                <span class="border border-neutral-200 text-sm dark:border-neutral-700 rounded-full px-4 py-1 text-sm font-semibold mr-2 bg-blue-900 text-white">
+                                    VARON
+                                </span>
+                                <input type="number" name="calificacion_varon[]" class="text-lg w-1/2 mt-2 border border-neutral-200 dark:border-neutral-700 rounded p-2 inline" placeholder="Varon" required value="0">
+                            </div>
+                            <div class="w-full flex justify-center items-center gap-2">
+                                <span class="border border-neutral-200 text-sm dark:border-neutral-700 rounded-full px-4 py-1 text-sm font-semibold mr-2 bg-purple-900 text-white">
+                                    MUJER
+                                </span>
+                                <input type="number" name="calificacion_mujer[]" class="text-lg w-1/2 mt-2 border border-neutral-200 dark:border-neutral-700 rounded p-2" placeholder="Mujer" required value="0">
+                            </div>
                             <input type="hidden" name="id_item[]" value="{{ $item['id'] }}">
                         </div>
                         
