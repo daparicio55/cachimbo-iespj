@@ -1,8 +1,6 @@
 <x-layouts.app title="Calificar Traje">
     <div class="flex h-full w-full flex-1 flex-col gap-4 rounded-xl">
-        <h1 class="text-2xl font-bold text-neutral-900 dark:text-neutral-100">
-            Sistema de Calificacion MISS y MISTER Cachimbo IES Público Perú Japón
-        </h1>
+        <x-sistema-header />
         <h3 class="font-bold text-neutral-900 dark:text-neutral-100 text-center">
             <span class="mt-2 bg-blue-500 text-white text-lg font-semibold rounded px-3 py-2 px-5 w-full text-center">
                 {{ $traje->nombre }}

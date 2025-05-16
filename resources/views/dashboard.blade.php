@@ -1,9 +1,6 @@
 <x-layouts.app :title="__('Dashboard')">
     <div class="flex h-full w-full flex-1 flex-col gap-4 rounded-xl">
-        <h1 class="text-2xl font-bold text-neutral-900 dark:text-neutral-100">
-            Sistema de Calificacion MISS y MISTER Cachimbo IES Público Perú Japón
-        </h1>
-
+        <x-sistema-header />
         <div class="grid auto-rows-min gap-4 md:grid-cols-3">
 
             @foreach ($trajes as $traje)

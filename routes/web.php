@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\CalificacioneController;
 use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\ParticipanteController;
 use App\Livewire\Settings\Appearance;
 use App\Livewire\Settings\Password;
 use App\Livewire\Settings\Profile;
@@ -18,6 +19,20 @@ Route::name('dashboard')->prefix('dashboard')->group(function(){
     ->name('.calificar.index');
     Route::get('/calificar/{id}/edit',[CalificacioneController::class,'edit'])
     ->name('.calificar.edit');
+    Route::put('/calificar/{id}/update',[CalificacioneController::class,'update'])
+    ->name('.calificar.update');
+
+    Route::get('/participantes',[ParticipanteController::class,'index'])
+    ->name('.participantes.index');
+    Route::get('/participantes/create',[ParticipanteController::class,'create'])
+    ->name('.participantes.create');
+    Route::post('/participantes',[ParticipanteController::class,'store'])
+    ->name('.participantes.store');
+
+    Route::delete('/participantes/{id}',[ParticipanteController::class,'destroy'])
+    ->name('.participantes.destroy');
+
+
 })->middleware(['auth', 'verified']);
 
 

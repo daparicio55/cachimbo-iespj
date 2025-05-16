@@ -18,11 +18,17 @@ class CalificacioneController extends Controller
     }
     public function edit(Request $request, $id)
     {
-        $items_calificacion = $this->getItemsCalificacion($id);      
+        $items_calificacion = $this->getItemsCalificacion($id); 
         $programa = Programa::find($request->programa_id);
         $traje = Traje::find($id);
+        //return $items_calificacion;
         return view('calificaciones.edit',compact('traje','programa','items_calificacion') );
     }
+
+    public function update(Request $request, $id){
+        return $request->all();
+    }
+
     public function getItemsCalificacion($id)
     {
         $items_calificacion = [];
