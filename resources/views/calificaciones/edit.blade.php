@@ -15,16 +15,16 @@
             @csrf
             @method('PUT')
             <input type="text" name="programa" value="{{ $programa->id }}" hidden>
-            @foreach ($items_calificacion as $key1 => $grupo)
-            <p class="text-center border p-2 bg-stone-500 border-neutral-200 dark:border-neutral-700 text-white mt-2 text-lg font-bold rounded">
-                {{ $key1 }}
-            </p>
+            
             <div class="grid auto-rows-min gap-5 md:grid-cols-3">
-                @foreach ($grupo as $key2 => $item)
+                @foreach ($items_calificacion as $key2 => $item)
                     <div class="relative aspect-video rounded-xl border border-neutral-200 dark:border-neutral-700 mt-2">
                         <h3 class="text-lg font-bold text-neutral-900 text-center dark:text-neutral-100 mt-2 border-b-2 border-neutral-200 dark:border-neutral-700 pb-3">
                             {{ $item['nombre'] }}
                         </h3>
+                        <p class="text-sm text-neutral-500 dark:text-neutral-400 text-center mt-2 border-b-2 border-neutral-200 dark:border-neutral-700 pb-3">
+                            {{ $item['descripcion'] }}
+                        </p>
                         <div class="flex flex-col gap-2">
                             <div class="w-full flex justify-center items-center gap-2">
                                 <x-badge-sexo color="blue" text="VARON" />
@@ -38,13 +38,12 @@
                         </div>
                         
                         <p class="text-sm text-neutral-500 dark:text-neutral-400 text-center mt-2 border-t-2 border-neutral-200 dark:border-neutral-700 py-2 p">
-                            {{ $item['descripcion'] }}
                             Puntaje máximo: {{ $item['puntaje_maximo'] }}
                         </p>
                     </div>
                 @endforeach
             </div>
-            @endforeach
+            
             <div class="flex justify-center mt-4">
                 <x-botton-guardar text="Guardar Calificaciones" />
             </div>

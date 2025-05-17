@@ -23,6 +23,7 @@ class DatabaseSeeder extends Seeder
             ProgramaSeed::class,
             PeriodoSeed::class,
             ItemSeed::class,
+            ParticipanteSeed::class,
         ]);
 
         //relacionar los usuarios con los periodos

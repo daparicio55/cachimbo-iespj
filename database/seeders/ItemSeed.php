@@ -6,6 +6,8 @@ use App\Models\Traje;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 
+use function Pest\Laravel\put;
+
 class ItemSeed extends Seeder
 {
     /**
@@ -15,120 +17,106 @@ class ItemSeed extends Seeder
     {
         $array01 = [
             [
-                'grupo_nombre' => 'Belleza – Pertinencia del traje',
-                'items' => [
-                    [
-                        'nombre' => 'Apariencia Física',
-                        'puntaje_maximo' => 25
-                    ],
-                    [
-                        'nombre' => 'Presentación (peinado, maquillaje)',
-                        'puntaje_maximo' => 10,
-                    ],
-                    [
-                        'nombre' => 'Vestuario',
-                        'puntaje_maximo' => 20
-                    ]
-                ]
+                'nombre' => 'Representatividad profesional',
+                'descripcion' => 'Reflejo claro del campo técnico o profesional',
+                'puntaje_maximo' => 25
             ],
             [
-                'grupo_nombre' => 'Elegancia',
-                'items' => [
-                    [
-                        'nombre' => 'Dominio del escenario',
-                        'puntaje_maximo' => 15
-                    ],
-                    [
-                        'nombre' => 'Expresión / Actitud',
-                        'puntaje_maximo' => 15
-                    ],
-                    [
-                        'nombre' => 'Carisma',
-                        'puntaje_maximo' => 15
-                    ]
-                ]
+                'nombre' => 'Creatividad y diseño',
+                'descripcion' => 'Diseño funcional, uso de elementos simbólicos',
+                'puntaje_maximo' => 25
+
+            ],
+                        [
+                'nombre' => 'Coherencia con el perfil técnico',
+                'descripcion' => 'Relación con funciones del área de estudio',
+                'puntaje_maximo' => 15
+
+            ],
+                        [
+                'nombre' => 'Porte y seguridad ',
+                'descripcion' => 'Postura, expresión corporal, actitud',
+                'puntaje_maximo' => 20
+
+            ],
+                        [
+                'nombre' => 'Presentación personal',
+                'descripcion' => 'Cuidado de peinado, limpieza, armonía visual',
+                'puntaje_maximo' => 15
+
             ]
         ];
 
         $array02 = [
             [
-                'grupo_nombre' => 'Cultura',
-                'items' => [
-                    [
-                        'nombre' => 'Respuestas precisas',
-                        'puntaje_maximo' => 15
-                    ],
-                    [
-                        'nombre' => 'Facilidad de palabra',
-                        'puntaje_maximo' => 15
-                    ]
-                ]
+                'nombre' => 'Confianza y seguridad',
+                'descripcion' => 'Naturalidad, actitud serena, contacto visual ',
+                'puntaje_maximo' => 15
             ],
             [
-                'grupo_nombre' => 'Belleza',
-                'items' => [
-                    [
-                        'nombre' => 'Apariencia Física',
-                        'puntaje_maximo' => 10
-                    ],
-                    [
-                        'nombre' => 'Presentación (peinado, maquillaje)',
-                        'puntaje_maximo' => 10,
-                    ],
-                    [
-                        'nombre' => 'Vestuario',
-                        'puntaje_maximo' => 20
-                    ]
-                ]
+                'nombre' => 'Expresión corporal y postura',
+                'descripcion' => 'Movimiento armónico, equilibrio',
+                'puntaje_maximo' => 25
             ],
             [
-                'grupo_nombre' => 'Elegancia',
-                'items' => [
-                    [
-                        'nombre' => 'Dominio del escenario',
-                        'puntaje_maximo' => 10
-                    ],
-                    [
-                        'nombre' => 'Expresión / Actitud',
-                        'puntaje_maximo' => 15
-                    ],
-                    [
-                        'nombre' => 'Carisma',
-                        'puntaje_maximo' => 10
-                    ]
-                ]
-            ]
+                'nombre' => 'Condición física',
+                'descripcion' => 'Apariencia saludable, proporción corporal ',
+                'puntaje_maximo' => 25
+            ],
+            [
+                'nombre' => 'Presencia escénica',
+                'descripcion' => 'Conexión con el público, carisma',
+                'puntaje_maximo' => 20
+            ],
+            [
+                'nombre' => 'Presentación del traje',
+                'descripcion' => 'Ajuste, limpieza, adecuación del diseño',
+                'puntaje_maximo' => 15
+            ],
         ];
 
-        $trajes = Traje::where('nombre','Traje de Especialidad')
-        ->orWhere('nombre','Traje de Baño')
-        ->get();
-        foreach ($trajes as $traje){
-            foreach ($array01 as $grupo){
-                foreach ($grupo['items'] as $item) {
-                    # code...
-                    $traje->items()->create([
-                        'grupo_nombre' => $grupo['grupo_nombre'],
-                        'nombre' => $item['nombre'],
-                        'descripcion' => null,
-                        'puntaje_maximo' => $item['puntaje_maximo']
-                    ]);
-                }
-            }
-        }
-        //el segundo array
-        $traje_noche = Traje::find(3);
-        foreach ($array02 as $grupo){
-            foreach ($grupo['items'] as $item) {
-                # code...
-                $traje_noche->items()->create([
-                    'grupo_nombre' => $grupo['grupo_nombre'],
-                    'nombre' => $item['nombre'],
-                    'descripcion' => null,
-                    'puntaje_maximo' => $item['puntaje_maximo']
-                ]);
-            }
-        }
+        $array03 = [
+            [
+                'nombre' => 'Elegancia y sofisticación del traje',
+                'descripcion' => 'Calidad del diseño, detalles, colores',
+                'puntaje_maximo' => 30
+            ],
+            [
+                'nombre' => 'Estilo personal ',
+                'descripcion' => 'Coherencia entre el traje y la personalidad',
+                'puntaje_maximo' => 20
+            ],
+            [
+                'nombre' => 'Seguridad y actitud',
+                'descripcion' => 'Confianza, gracia al caminar ',
+                'puntaje_maximo' => 25
+            ],
+            [
+                'nombre' => 'Impacto visual ',
+                'descripcion' => 'Primera impresion percepcion y efecto',
+                'puntaje_maximo' => 10
+            ],
+            [
+                'nombre' => 'Presentación final ',
+                'descripcion' => 'Peinado, maquillaje, accesorios',
+                'puntaje_maximo' => 15
+            ],
+        ];
 
+        $trajes = Traje::get();
+       foreach ($trajes as $key => $traje) {
+        # code...
+            if ($traje->id == 1){
+                $traje->items()->createMany($array01);
+            }
+
+            if ($traje->id == 2){
+                $traje->items()->createMany($array02);
+            }
+            
+            if ($traje->id == 3){
+                $traje->items()->createMany($array03);
+            }
+        }
     }
 }

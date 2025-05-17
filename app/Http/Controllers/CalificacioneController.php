@@ -31,6 +31,7 @@ class CalificacioneController extends Controller
     }
 
     public function update(Request $request, $id){
+        //return $request->all();
         //obtener jurados
         $jurado = Auth::user();
         $periodo = Periodo::where('activo',1)->first();
@@ -72,41 +73,36 @@ class CalificacioneController extends Controller
     public function getItemsCalificacion($id,$programa_id)
     {
         $items_calificacion = [];
-        $grupos = Item::where('traje_id',$id)
-        ->groupBy('grupo_nombre')
-        ->select('grupo_nombre')
-        ->get();
+
         $periodo = Periodo::where('activo',1)->first();
 
-        foreach($grupos as $grupo){
-            $items = Item::where('traje_id',$id)
-            ->where('grupo_nombre',$grupo->grupo_nombre)
-            ->get();
-            foreach($items as $item){
+        $items = Item::where('traje_id',$id)->get();
+        
+        foreach ($items as $key => $item) {
+            # code...
+            $mujer = $this->getParticipante('Mujer',$programa_id,$periodo->id);
+            $varon = $this->getParticipante('Varon',$programa_id,$periodo->id);
 
-                $mujer = $this->getParticipante('Mujer',$programa_id,$periodo->id);
-                $varon = $this->getParticipante('Varon',$programa_id,$periodo->id);
+            $calificacion_mujer = Calificacione::where('participante_id',$mujer->id)
+            ->where('user_id',Auth::user()->id)
+            ->where('periodo_id',$periodo->id)
+            ->where('item_id',$item->id)
+            ->first();
 
-                $calificacion_mujer = Calificacione::where('participante_id',$mujer->id)
-                ->where('user_id',Auth::user()->id)
-                ->where('periodo_id',$periodo->id)
-                ->where('item_id',$item->id)
-                ->first();
-                $calificacion_varon = Calificacione::where('participante_id',$varon->id)
-                ->where('user_id',Auth::user()->id)
-                ->where('periodo_id',$periodo->id)
-                ->where('item_id',$item->id)
-                ->first();
+            $calificacion_varon = Calificacione::where('participante_id',$varon->id)
+            ->where('user_id',Auth::user()->id)
+            ->where('periodo_id',$periodo->id)
+            ->where('item_id',$item->id)
+            ->first();
 
-                $items_calificacion[$grupo->grupo_nombre][] = [
-                    'id' => $item->id,
-                    'nombre' => $item->nombre,
-                    'descripcion' => $item->descripcion,
-                    'puntaje_maximo' => $item->puntaje_maximo,
-                    'puntos_varon' => $calificacion_varon ? $calificacion_varon->puntos : 0,
-                    'puntos_mujer' => $calificacion_mujer ? $calificacion_mujer->puntos : 0,
-                ];
-            }
+            $items_calificacion[] = [
+                'id' => $item->id,
+                'nombre' => $item->nombre,
+                'descripcion' => $item->descripcion,
+                'puntaje_maximo' => $item->puntaje_maximo,
+                'puntos_varon' => $calificacion_varon ? $calificacion_varon->puntos : 0,
+                'puntos_mujer' => $calificacion_mujer ? $calificacion_mujer->puntos : 0,
+            ];
         }
         return $items_calificacion;
     }

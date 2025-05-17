@@ -13,14 +13,13 @@ return new class extends Migration
     {
         Schema::create('items', function (Blueprint $table) {
             $table->id();
-            $table->string('grupo_nombre');
             $table->string('nombre');
             $table->string('descripcion')->nullable();
             $table->integer('puntaje_maximo');
             $table->foreignId(('traje_id'))
-                ->constrained('trajes')
-                ->cascadeOnDelete()
-                ->cascadeOnUpdate();
+            ->constrained('trajes')
+            ->cascadeOnDelete()
+            ->cascadeOnUpdate();
             $table->timestamps();
         });
     }
