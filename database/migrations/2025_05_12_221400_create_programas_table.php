@@ -15,6 +15,8 @@ return new class extends Migration
             $table->id();
             $table->string('nombre')->unique();
             $table->string('descripcion')->nullable();
+            $table->string('url_path')->nullable();
+            $table->string('color')->nullable();
             $table->timestamps();
         });
     }

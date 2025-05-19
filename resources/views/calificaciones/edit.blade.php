@@ -6,7 +6,7 @@
                 {{ $programa->nombre }}
             </h2>
             <h2 class="font-bold text-neutral-900 dark:text-neutral-100 text-center mt-2">
-                <span class="badge bg-neutral-900 text-white rounded-full px-4 py-2 text-sm font-semibold mr-2">
+                <span class="badge bg-neutral-900 text-white rounded-full px-4 py-2 text-xl font-semibold mr-2">
                     {{ $traje->nombre }}
                 </span>
             </h2>
@@ -28,11 +28,11 @@
                         <div class="flex flex-col gap-2">
                             <div class="w-full flex justify-center items-center gap-2">
                                 <x-badge-sexo color="blue" text="VARON" />
-                                <input type="number" name="calificacion_varon[]" class="text-lg w-1/2 mt-2 border border-neutral-200 dark:border-neutral-700 rounded p-2 inline" placeholder="Varon" required value="{{ $item['puntos_varon'] }}">
+                                <x-input-calificacion name="calificacion_varon[]" max="{{ $item['puntaje_maximo'] }}" placeholder="Varon" value="{{ $item['puntos_varon'] }}" />
                             </div>
                             <div class="w-full flex justify-center items-center gap-2">
                                 <x-badge-sexo color="purple" text="MUJER" />
-                                <input type="number" name="calificacion_mujer[]" class="text-lg w-1/2 mt-2 border border-neutral-200 dark:border-neutral-700 rounded p-2" placeholder="Mujer" required value="{{ $item['puntos_mujer'] }}">
+                                <x-input-calificacion name="calificacion_mujer[]" max="{{ $item['puntaje_maximo'] }}" placeholder="Mujer" value="{{ $item['puntos_mujer'] }}" />
                             </div>
                             <input type="hidden" name="id_item[]" value="{{ $item['id'] }}">
                         </div>
@@ -43,7 +43,6 @@
                     </div>
                 @endforeach
             </div>
-            
             <div class="flex justify-center mt-4">
                 <x-botton-guardar text="Guardar Calificaciones" />
             </div>

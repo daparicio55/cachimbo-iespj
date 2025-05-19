@@ -15,12 +15,15 @@ class TrajeSeed extends Seeder
     {
         Traje::create([
             'nombre' => 'Traje de Especialidad',
+            'video_path' => '/resources/videos/especialidad.mp4'
         ]);
         Traje::create([
             'nombre' => 'Traje de Baño',
+            'video_path' => '/resources/videos/trajebanio.mp4'
         ]);
         Traje::create([
             'nombre' => 'Traje de Noche - Gala',
+            'video_path' => '/resources/videos/galanoche.mp4'
         ]);
     }
 }

@@ -14,6 +14,7 @@ return new class extends Migration
         Schema::create('trajes', function (Blueprint $table) {
             $table->id();
             $table->string('nombre')->unique();
+            $table->string('video_path')->nullable();
             $table->timestamps();
         });
     }
