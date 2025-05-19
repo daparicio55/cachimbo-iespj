@@ -11,6 +11,9 @@
                 </span>
             </h2>
         </div>
+        <div class="col-span-3">
+            <x-botton-regresar route="{{ route('dashboard.calificar.index',$traje->id) }}" text="Regresar" title="Regresar a la lista de especialidades" />
+        </div>
         <form action="{{ route('dashboard.calificar.update',$traje->id) }}" method="post">
             @csrf
             @method('PUT')

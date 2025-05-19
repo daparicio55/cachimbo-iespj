@@ -49,4 +49,7 @@
             </x-tabla>
         </div>
     </div>
+    @push('scripts')
+        <x-session-alert />
+    @endpush
 </x-layouts.app>
