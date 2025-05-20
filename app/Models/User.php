@@ -24,6 +24,7 @@ class User extends Authenticatable
         'email',
         'password',
     ];
+    protected $softDelete = true;
 
     /**
      * The attributes that should be hidden for serialization.

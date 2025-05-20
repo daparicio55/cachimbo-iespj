@@ -2,7 +2,10 @@
 
 use App\Http\Controllers\CalificacioneController;
 use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\FinalController;
+use App\Http\Controllers\JuradoController;
 use App\Http\Controllers\ParticipanteController;
+use App\Http\Controllers\ResultadoController;
 use App\Livewire\Settings\Appearance;
 use App\Livewire\Settings\Password;
 use App\Livewire\Settings\Profile;
@@ -46,3 +49,30 @@ Route::post('/dashboard/participantes',[ParticipanteController::class,'store'])
 ->name('dashboard.participantes.store');
 Route::delete('/participantes/{id}',[ParticipanteController::class,'destroy'])
 ->name('dashboard.participantes.destroy');
+
+Route::get('/dashboard/jurados',[JuradoController::class,'index'])
+->middleware(['auth','verified'])
+->name('dashboard.jurados.index');
+Route::get('/dashboard/jurados/create',[JuradoController::class,'create'])
+->middleware(['auth','verified'])
+->name('dashboard.jurados.create');
+Route::post('/dashboard/jurados',[JuradoController::class,'store'])
+->middleware(['auth','verified'])
+->name('dashboard.jurados.store');
+Route::delete('/jurados/{id}',[JuradoController::class,'destroy'])
+->middleware(['auth','verified'])
+->name('dashboard.jurados.destroy');
+
+Route::get('/dashboard/resultados',[ResultadoController::class,'index'])
+->middleware(['auth','verified'])
+->name('dashboard.resultados.index');
+Route::get('/dashboard/resultados/show',[ResultadoController::class,'show'])
+->middleware(['auth','verified'])
+->name('dashboard.resultados.show');
+
+Route::get('/dashboard/final',[FinalController::class,'index'])
+->middleware(['auth','verified'])
+->name('dashboard.finales.index');
+Route::get('/dashboard/final/show',[FinalController::class,'show'])
+->middleware(['auth','verified'])
+->name('dashboard.finales.show');

@@ -16,4 +16,8 @@ class Periodo extends Model
         return $this->belongsToMany(User::class)->withTimestamps();
     }
 
+    public function participantes()
+    {
+        return $this->hasMany(Participante::class);
+    }
 }

@@ -14,5 +14,19 @@ class Calificacione extends Model
         'item_id'
     ];
 
+    public function item()
+    {
+        return $this->belongsTo(Item::class);
+    }
+
+    public function participante()
+    {
+        return $this->belongsTo(Participante::class);
+    }
+    
+    public function user()
+    {
+        return $this->belongsTo(User::class);
+    }
 
 }

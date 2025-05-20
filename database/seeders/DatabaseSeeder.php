@@ -2,6 +2,8 @@
 
 namespace Database\Seeders;
 
+use App\Models\Calificacione;
+use App\Models\Participante;
 use App\Models\Periodo;
 use App\Models\Programa;
 use App\Models\Traje;
@@ -35,5 +37,33 @@ class DatabaseSeeder extends Seeder
         foreach ($users as $user) {
             $user->periodos()->attach($periodo->id);
         }
+
+        $participantes = Participante::get();
+        $trajes = Traje::get();
+        $jurados = User::whereHas('roles',function($query){
+            $query->where('name','Jurado');
+        })->get();
+        foreach ($participantes as $participante) {
+
+            foreach ($trajes as $traje) {
+                # code...
+                foreach ($traje->items as $item) {
+                    # code...
+                    foreach ($jurados as $jurado) {
+                        # code...
+                        Calificacione::create([
+                            'puntos' => rand(0,$item->puntaje_maximo),
+                            'participante_id' => $participante->id,
+                            'item_id' => $item->id,
+                            'periodo_id' => 1,
+                            'user_id' => $jurado->id,
+                        ]);
+                    }
+                }
+            }
+        }
+
+
+
     }
 }
