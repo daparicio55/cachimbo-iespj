@@ -13,27 +13,35 @@
 
             <flux:navlist variant="outline">
                 <flux:navlist.group heading="Menu" class="grid">
+                    @can('dashboard')
+                        <flux:navlist.item icon="home" :href="route('dashboard')" :current="request()->routeIs('dashboard')" wire:navigate>
+                            Inicio
+                        </flux:navlist.item>
+                    @endcan
+                    
+                    @can('dashboard.participantes.index')
+                        <flux:navlist.item icon="users" :href="route('dashboard.participantes.index')" :current="request()->routeIs('dashboard.participantes.index','dashboard.participantes.create')" wire:navigate>
+                            Participantes
+                        </flux:navlist.item>
+                    @endcan
 
-                    <flux:navlist.item icon="home" :href="route('dashboard')" :current="request()->routeIs('dashboard')" wire:navigate>
-                        Inicio
-                    </flux:navlist.item>
+                    @can('dashboard.jurados.index')
+                        <flux:navlist.item icon="clipboard-document-list" :href="route('dashboard.jurados.index')" :current="request()->routeIs('dashboard.jurados.index','dashboard.jurados.create')" wire:navigate>
+                            Jurados
+                        </flux:navlist.item>
+                    @endcan
 
-                    <flux:navlist.item icon="users" :href="route('dashboard.participantes.index')" :current="request()->routeIs('dashboard.participantes.index','dashboard.participantes.create')" wire:navigate>
-                        Participantes
-                    </flux:navlist.item>
+                    @can('dashboard.resultados.index')
+                        <flux:navlist.item icon="document" :href="route('dashboard.resultados.index')" :current="request()->routeIs('dashboard.resultados.index','dashboard.resultados.show')" wire:navigate>
+                            Resultados
+                        </flux:navlist.item>
+                    @endcan
 
-                    <flux:navlist.item icon="clipboard-document-list" :href="route('dashboard.jurados.index')" :current="request()->routeIs('dashboard.jurados.index','dashboard.jurados.create')" wire:navigate>
-                        Jurados
-                    </flux:navlist.item>
-
-                    <flux:navlist.item icon="document" :href="route('dashboard.resultados.index')" :current="request()->routeIs('dashboard.resultados.index','dashboard.resultados.show')" wire:navigate>
-                        Resultados
-                    </flux:navlist.item>
-
-                    <flux:navlist.item icon="check" :href="route('dashboard.finales.index')" :current="request()->routeIs('dashboard.finales.index','dashboard.final.show')" wire:navigate>
-                        Resultado Final
-                    </flux:navlist.item>
-
+                    @can('dashboard.finales.index')
+                        <flux:navlist.item icon="check" :href="route('dashboard.finales.index')" :current="request()->routeIs('dashboard.finales.index','dashboard.final.show')" wire:navigate>
+                            Resultado Final
+                        </flux:navlist.item>
+                    @endcan
                 </flux:navlist.group>
             </flux:navlist>
 
