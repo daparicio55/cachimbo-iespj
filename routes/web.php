@@ -69,6 +69,10 @@ Route::get('/dashboard/resultados',[ResultadoController::class,'index'])
 Route::get('/dashboard/resultados/show',[ResultadoController::class,'show'])
 ->middleware(['auth','verified'])
 ->name('dashboard.resultados.show');
+Route::get('/dashboard/resultados/imprimir',[ResultadoController::class,'imprimir'])
+->middleware(['auth','verified'])
+->name('dashboard.resultados.imprimir');
+
 
 Route::get('/dashboard/final',[FinalController::class,'index'])
 ->middleware(['auth','verified'])
@@ -76,3 +80,6 @@ Route::get('/dashboard/final',[FinalController::class,'index'])
 Route::get('/dashboard/final/show',[FinalController::class,'show'])
 ->middleware(['auth','verified'])
 ->name('dashboard.finales.show');
+Route::get('/dashboard/final/imprimir',[FinalController::class,'imprimir'])
+->middleware(['auth','verified'])
+->name('dashboard.finales.imprimir');

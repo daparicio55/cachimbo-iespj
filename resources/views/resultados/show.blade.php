@@ -22,7 +22,6 @@
                 <x-slot name="header">
                     <tr>
                         <x-tabla-th>Programa de Estudios</x-tabla-th>
-                        {{-- <x-tabla-th>N°</x-tabla-th> --}}
                         <x-tabla-th>Categoría</x-tabla-th>
                         <x-tabla-th>APELLIDOS, Nombres</x-tabla-th>
                         @foreach ($trajes as $traje)
@@ -43,14 +42,12 @@
                 @foreach ($datos as $dato)
                     <tr>
                         <td class="px-3 py-2 border" rowspan="2">{{ $dato['programa'] }}</td>
-                        {{-- <td class="border">
-
-                        </td> --}}
                         <td class="px-3 py-2">
                             Varon
                         </td>
                         <td>
-                            {{ $dato['participantes']['varon']['apellidos'] }}, {{ $dato['participantes']['varon']['nombres'] }}
+                            {{ $dato['participantes']['varon']['apellidos'] }},
+                            {{ $dato['participantes']['varon']['nombres'] }}
                         </td>
                         @foreach ($dato['participantes']['puntos_varon'] as $punto_traje_varon)
                             <td class="text-center border">
@@ -65,14 +62,12 @@
                         </td>
                     </tr>
                     <tr>
-                        {{-- <td class="border">
-
-                        </td> --}}
                         <td class="px-3 py-2">
                             Mujer
                         </td>
                         <td>
-                            {{ $dato['participantes']['mujer']['apellidos'] }}, {{ $dato['participantes']['mujer']['nombres'] }}
+                            {{ $dato['participantes']['mujer']['apellidos'] }},
+                            {{ $dato['participantes']['mujer']['nombres'] }}
                         </td>
                         @foreach ($dato['participantes']['puntos_mujer'] as $punto_traje_mujer)
                             <td class="text-center border">
@@ -87,6 +82,16 @@
                         </td>
                     </tr>
                 @endforeach
+                <x-slot name="footer">
+                    <tr>
+                        <td colspan="100" class="px-4 py-2 text-right">
+                            <form action="{{ route('dashboard.resultados.imprimir') }}" method="get">
+                                <input type="hidden" name="periodo" value="{{ $periodo }}">
+                                <x-botton-imprimir />
+                            </form>
+                        </td>
+                    </tr>
+                </x-slot>
             </x-tabla>
         </div>
     </div>

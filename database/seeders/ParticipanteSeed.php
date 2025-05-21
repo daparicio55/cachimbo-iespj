@@ -14,99 +14,99 @@ class ParticipanteSeed extends Seeder
     public function run(): void
     {
         Participante::create([
-            'nombres' => 'Juan',
-            'apellidos' => 'Pérez',
+            'nombres' => 'Luis Jhulinio',
+            'apellidos' => 'SANCHEZ CHINGUEL',
             'sexo' => 'Varon',
             'programa_id' => 1,
             'periodo_id' => 1,
         ]);
         Participante::create([
-            'nombres' => 'Maria',
-            'apellidos' => 'Gonzalez',
+            'nombres' => 'Angge Tatiana',
+            'apellidos' => 'VELA BUSTAMANTE',
             'sexo' => 'Mujer',
             'programa_id' => 1,
             'periodo_id' => 1,
         ]);
         Participante::create([
-            'nombres' => 'Carlos',
-            'apellidos' => 'Lopez',
+            'nombres' => 'Yoshua Jano',
+            'apellidos' => 'LOZANO HERNANDEZ',
             'sexo' => 'Varon',
             'programa_id' => 2,
             'periodo_id' => 1,
         ]);
         Participante::create([
-            'nombres' => 'Ana',
-            'apellidos' => 'Martinez',
+            'nombres' => 'Maria Jimena',
+            'apellidos' => 'SANCHEZ DIAZ',
             'sexo' => 'Mujer',
             'programa_id' => 2,
             'periodo_id' => 1,
         ]);
         Participante::create([
-            'nombres' => 'Luis',
-            'apellidos' => 'Hernandez',
+            'nombres' => 'Elber Fredey',
+            'apellidos' => 'YAGKUG NUGKUM',
             'sexo' => 'Varon',
             'programa_id' => 3,
             'periodo_id' => 1,
         ]);
         Participante::create([
-            'nombres' => 'Laura',
-            'apellidos' => 'Ramirez',
+            'nombres' => 'Fatima Rocio',
+            'apellidos' => 'SAAVEDRA TEJADA',
             'sexo' => 'Mujer',
             'programa_id' => 3,
             'periodo_id' => 1,
         ]);
         Participante::create([
-            'nombres' => 'Pedro',
-            'apellidos' => 'García',
+            'nombres' => 'Sebastian Wilfredo',
+            'apellidos' => 'AGURTO RAMOS',
             'sexo' => 'Varon',
             'programa_id' => 4,
             'periodo_id' => 1,
         ]);
         Participante::create([
-            'nombres' => 'Sofia',
-            'apellidos' => 'Fernandez',
+            'nombres' => 'Jhenifer Cleidi',
+            'apellidos' => 'OBLITAS TRIGOSO',
             'sexo' => 'Mujer',
             'programa_id' => 4,
             'periodo_id' => 1,
         ]);
         Participante::create([
-            'nombres' => 'Andres',
-            'apellidos' => 'Torres',
+            'nombres' => 'Gleiser',
+            'apellidos' => 'ZUMAETA CUCHCA',
             'sexo' => 'Varon',
             'programa_id' => 5,
             'periodo_id' => 1,
         ]);
         Participante::create([
-            'nombres' => 'Valentina',
-            'apellidos' => 'Cruz',
+            'nombres' => 'Llely Rocio',
+            'apellidos' => 'TORRES ZUTA',
             'sexo' => 'Mujer',
             'programa_id' => 5,
             'periodo_id' => 1,
         ]);
         Participante::create([
-            'nombres' => 'Diego',
-            'apellidos' => 'Morales',
+            'nombres' => 'Euler Jose',
+            'apellidos' => 'TUNJAR ASPAJO',
             'sexo' => 'Varon',
             'programa_id' => 6,
             'periodo_id' => 1,
         ]);
         Participante::create([
-            'nombres' => 'Camila',
-            'apellidos' => 'Vasquez',
+            'nombres' => 'Veronica',
+            'apellidos' => 'CASTAÑEDA ZUMAETA',
             'sexo' => 'Mujer',
             'programa_id' => 6,
             'periodo_id' => 1,
         ]);
         Participante::create([
-            'nombres' => 'Sebastian',
-            'apellidos' => 'Jimenez',
+            'nombres' => 'Jesus Eugenio',
+            'apellidos' => 'LOPEZ TUESTA',
             'sexo' => 'Varon',
             'programa_id' => 7,
             'periodo_id' => 1,
         ]);
         Participante::create([
-            'nombres' => 'Isabella',
-            'apellidos' => 'Salazar',
+            'nombres' => 'Doris Giovanny',
+            'apellidos' => 'TRIGOSO ROJAS',
             'sexo' => 'Mujer',
             'programa_id' => 7,
             'periodo_id' => 1,

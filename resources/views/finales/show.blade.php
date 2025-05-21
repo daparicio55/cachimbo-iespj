@@ -87,6 +87,12 @@
                     </td>
                 </tr>
             </x-tabla>
+            <div class="flex justify-end mt-3">
+                <form action="{{ route('dashboard.finales.imprimir') }}" method="get">
+                    <input type="hidden" name="periodo" value="{{ $periodo->id }}">
+                    <x-botton-imprimir />
+                </form>
+            </div>
         </div>
     </div>
     @push('scripts')
