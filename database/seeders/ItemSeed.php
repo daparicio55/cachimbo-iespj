@@ -103,6 +103,34 @@ class ItemSeed extends Seeder
             ],
         ];
 
+        $array04 = [
+            [
+                'nombre' => 'Contenido y coherencia',
+                'descripcion' => 'Respuesta lógica, organizada, bien desarrollada',
+                'puntaje_maximo' => 30
+            ],
+            [
+                'nombre' => 'Claridad y fluidez verbal',
+                'descripcion' => '',
+                'puntaje_maximo' => 20
+            ],
+            [
+                'nombre'=>'Lenguaje corporal y seguridad',
+                'descripcion'=>'Postura, contacto visual, confianza',
+                'puntaje_maximo' => 20
+            ],
+            [
+                'nombre'=>'Creatividad y profundidad',
+                'descripcion'=>'Originalidad, impacto del mensaje, manejo de ideas',
+                'puntaje_maximo' => 20 
+            ],
+            [
+                'nombre'=>'Manejo del tiempo',
+                'descripcion'=>'Respuesta dentro del tiempo estimado (30–60 segundos)',
+                'puntaje_maximo' => 10
+            ]
+        ];
+
         $trajes = Traje::get();
        foreach ($trajes as $key => $traje) {
         # code...
@@ -116,6 +144,10 @@ class ItemSeed extends Seeder
             
             if ($traje->id == 3){
                 $traje->items()->createMany($array03);
+            }
+
+            if ($traje->id == 4){
+                $traje->items()->createMany($array04);
             }
         }
     }

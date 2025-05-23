@@ -25,5 +25,9 @@ class TrajeSeed extends Seeder
             'nombre' => 'Traje de Noche - Gala',
             'video_path' => '/resources/videos/galanoche.mp4'
         ]);
+        Traje::create([
+            'nombre' => 'Pregunta Sorteada',
+            'video_path' => '/resources/videos/preguntasorteada.mp4'
+        ]);
     }
 }
