@@ -39,7 +39,7 @@ class DatabaseSeeder extends Seeder
             $user->periodos()->attach($periodo->id);
         }
 
-        $participantes = Participante::get();
+/*         $participantes = Participante::get();
         $trajes = Traje::get();
         $jurados = User::whereHas('roles',function($query){
             $query->where('name','Jurado');
@@ -62,7 +62,7 @@ class DatabaseSeeder extends Seeder
                     }
                 }
             }
-        }
+        } */
 
 
 

@@ -19,19 +19,19 @@ class UserSeed extends Seeder
         ]);
         $administrador->assignRole('Administrador');
         $jurado01 = User::create([
-            'name' => 'ALVAREZ CARRILLO, Jairo',
+            'name' => 'REYNA SANTILLÁN, Fernando',
             'email' => 'jurado01@gmail.com',
             'password' => bcrypt('12345678'),
         ]);
         $jurado01->assignRole('Jurado');
         $jurado02 = User::create([
-            'name' => 'ESCOBAR ESCOBAR, Pablo',
+            'name' => 'FEIJO DE SAMBUCETI, Silvia',
             'email' => 'jurado02@gmail.com',
             'password' => bcrypt('12345678'),
         ]);
         $jurado02->assignRole('Jurado');
         $jurado03 = User::create([
-            'name' => 'GARCIA GARCIA, Luis',
+            'name' => 'SOLOL MONTOYA, Marco Antonio',
             'email' => 'jurado03@gmail.com',
             'password' => bcrypt('12345678'),
         ]);

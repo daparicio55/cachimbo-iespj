@@ -109,7 +109,7 @@
         <table>
             <thead>
                 <tr>
-                    <th colspan="3">
+                    <th colspan="4">
                         RESULTADOS PRINCIPALES
                     </th>
                 </tr>
@@ -117,6 +117,7 @@
                     <th>Título</th>
                     <th>Programa de Estudios</th>
                     <th>Ganador(a)</th>
+                    <th>Puntos</th>
                 </tr>
             </thead>
             <tbody>
@@ -128,6 +129,9 @@
                     <td>
                         {{ $resultados['mujeres'][0]['participante'] }}
                     </td>
+                    <td>
+                        {{ $resultados['mujeres'][0]['suma'] }}
+                    </td>
                 </tr>
                 <tr>
                     <td>MISTER Cachimbo {{ $periodo->nombre }} (1er lugar)</td>
@@ -137,18 +141,22 @@
                     <td>
                         {{ $resultados['varones'][0]['participante'] }}
                     </td>
+                    <td>
+                        {{ $resultados['varones'][0]['suma'] }}
+                    </td>
                 </tr>
             </tbody>
         </table>
         <table>
             <thead>
                 <tr>
-                    <th colspan="3">Disticiones Adicionales (Categoría MISS)</th>
+                    <th colspan="4">Disticiones Adicionales (Categoría MISS)</th>
                 </tr>
                 <tr>
                     <th>Distinción</th>
                     <th>Programa de Estudios</th>
                     <th>Ganadora</th>
+                    <th>Puntos</th>
                 </tr>
             </thead>
             <tbody>
@@ -160,6 +168,9 @@
                     <td>
                         {{ $resultados['mujeres'][1]['participante'] }}
                     </td>
+                    <td>
+                        {{ $resultados['mujeres'][1]['suma'] }}
+                    </td>
                 </tr>
                 <tr>
                     <td>MISS Simpatía (3r lugar)</td>
@@ -168,6 +179,9 @@
                     </td>
                     <td>
                         {{ $resultados['mujeres'][2]['participante'] }}
+                    </td>
+                    <td>
+                        {{ $resultados['mujeres'][2]['suma'] }}
                     </td>
                 </tr>
             </tbody>

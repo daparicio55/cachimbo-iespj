@@ -25,6 +25,7 @@
                         <x-tabla-th>Título</x-tabla-th>
                         <x-tabla-th>Programa de Estudios</x-tabla-th>
                         <x-tabla-th>APELLIDOS, Nombres</x-tabla-th>
+                        <th>Puntos</th>
                     </tr>
                 </x-slot>
                 <tr>
@@ -35,6 +36,9 @@
                     <td class="px-3 py-2 border">
                         {{ $resultados['mujeres'][0]['participante'] }}
                     </td>
+                    <td class="text-center">
+                        {{ $resultados['mujeres'][0]['suma'] }}
+                    </td>
                 </tr>
                 <tr>
                     <td class="px-3 py-2 border">Miss Cachimbo 2025(1er Lugar)</td>
@@ -43,6 +47,9 @@
                     </td>
                     <td class="px-3 py-2 border">
                         {{ $resultados['varones'][0]['participante'] }}
+                    </td>
+                    <td class="text-center">
+                        {{ $resultados['varones'][0]['suma'] }}
                     </td>
                 </tr>
             </x-tabla>
@@ -66,6 +73,7 @@
                         <x-tabla-th>Distición</x-tabla-th>
                         <x-tabla-th>Programa de Estudios</x-tabla-th>
                         <x-tabla-th>APELLIDOS, Nombres</x-tabla-th>
+                        <th>Puntos  </th>
                     </tr>
                 </x-slot>
                 <tr>
@@ -76,6 +84,9 @@
                     <td class="px-3 py-2 border">
                         {{ $resultados['mujeres'][1]['participante'] }}
                     </td>
+                    <td class="text-center">
+                        {{ $resultados['mujeres'][1]['suma'] }}
+                    </td>
                 </tr>
                 <tr>
                     <td class="px-3 py-2 border">Miss Simpatía (3er Lugar)</td>
@@ -84,6 +95,9 @@
                     </td>
                     <td class="px-3 py-2 border">
                         {{ $resultados['mujeres'][2]['participante'] }}
+                    </td>
+                    <td class="text-center">
+                        {{ $resultados['mujeres'][2]['suma'] }}
                     </td>
                 </tr>
             </x-tabla>

@@ -19,43 +19,50 @@ class ProgramaSeed extends Seeder
                 'nombre' => 'Arquitectura de Plataformas y Servicios de Información',
                 'descripcion' => 'Arquitectura de Plataformas y Servicios de Información',
                 'url_path' => '/resources/imgs/apsti.png',
-                'color' => 'blue'
+                'color' => 'blue',
+                'numero'=>4
             ],
             [
                 'nombre' => 'Asistencia Administrativa',
                 'descripcion' => 'Asistencia Administrativa',
                 'url_path' => '/resources/imgs/asistencia.png',
-                'color' => 'red'
+                'color' => 'red',
+                'numero'=>7
             ],
             [
                 'nombre' => 'Producción Agropecuaria',
                 'descripcion' => 'Producción Agropecuaria',
                 'url_path' => '/resources/imgs/agropecuaria.png',
-                'color' => 'green'
+                'color' => 'green',
+                'numero'=>2
             ],
             [
                 'nombre' => 'Electrónica Industrial',
                 'descripcion' => 'Electrónica Industrial',
                 'url_path' => '/resources/imgs/electronica.png',
-                'color' => 'yellow'
+                'color' => 'yellow',
+                'numero'=>1
             ],
             [
                 'nombre' => 'Enfermería Técnica',
                 'descripcion' => 'Enfermería Técnica',
                 'url_path' => '/resources/imgs/enfermeria.png',
-                'color' => 'cyan'
+                'color' => 'cyan',
+                'numero'=>3
             ],
             [
                 'nombre' => 'Laboratorio Clínico y Anatomia Patológica',
                 'descripcion' => 'Laboratorio Clínico y Anatomia Patológica',
                 'url_path' => '/resources/imgs/lcap.png',
-                'color' => 'purple'
+                'color' => 'purple',
+                'numero'=>5
             ],
             [
                 'nombre' => 'Mecatrónica Automotriz',
                 'descripcion' => 'Mecatrónica Automotriz',
                 'url_path' => '/resources/imgs/mecatronica.png',
-                'color' => 'orange'
+                'color' => 'orange',
+                'numero'=>6
             ]
         ];
 
