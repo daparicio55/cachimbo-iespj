@@ -14,6 +14,6 @@
     };
 @endphp
 
-<div class="relative rounded-xl border-4 {{ $c }} dark:border-neutral-700">
+<div class="rounded-xl border-4 {{ $c }} dark:border-neutral-700">
     {{ $slot }}
 </div>

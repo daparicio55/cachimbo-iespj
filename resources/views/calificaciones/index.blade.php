@@ -6,12 +6,13 @@
                 {{ Str::upper($traje->nombre) }}
             </span>
         </h3>
-        <div class="grid auto-rows-min gap-5 md:grid-cols-3">
-            <div class="col-span-3">
+        <div class="grid grid-cols-1 gap-3 md:grid-cols-3">
+            <div class="md:col-span-3 mt-2 flex items-center justify-start gap-2">
                 <x-botton-regresar route="{{ route('dashboard') }}" text="Regresar"
                     title="Regresar a la lista de trajes" />
             </div>
             @foreach ($programas as $programa)
+            <div>
                 <form action="{{ route('dashboard.calificar.edit', $traje->id) }}" method="get">
                     <input type="hidden" name="programa_id" value="{{ $programa->id }}">                  
                     <x-card-programa :color="$programa->color">
@@ -33,6 +34,7 @@
                         </div>
                     </x-card-programa>
                 </form>
+            </div>
             @endforeach
         </div>
     </div>
