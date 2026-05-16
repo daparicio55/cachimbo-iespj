@@ -131,6 +131,35 @@ class ItemSeed extends Seeder
             ]
         ];
 
+        $array05 = [
+            [
+                'nombre'=>'Identidad cultural amazonica',
+                'descripcion' => 'Representacion de la cultura de la region amazonica',
+                'puntaje_maximo' => 25
+            ],
+            [
+                'nombre' => 'Creatividad e Interpretación',
+                'descripcion' => 'Originalidad en el diseño, respetanto la esencia cultural',
+                'puntaje_maximo' => 25
+            ],
+            [
+                'nombre' => 'Calidad y elaboracion del traje',
+                'descripcion' => 'Materiales, acabados, detalles artesanales',
+                'puntaje_maximo' => 15
+            ],
+            [
+                'nombre' => 'Uso de elementos simbolicos',
+                'descripcion' => 'Incorporacion de accesorios o elementos representativos (naturaleza, historia, costumbres)',
+                'puntaje_maximo' => 20
+            ],
+            [
+                'nombre' => 'Presentacion general',
+                'descripcion' => 'Limpieza, ajuste del traje y armonia del conjunto',
+                'puntaje_maximo' => 15
+            ]
+
+        ];
+
         $trajes = Traje::get();
        foreach ($trajes as $key => $traje) {
         # code...
@@ -148,6 +177,9 @@ class ItemSeed extends Seeder
 
             if ($traje->id == 4){
                 $traje->items()->createMany($array04);
+            }
+            if ($traje->id == 5){
+                $traje->items()->createMany($array05);
             }
         }
     }

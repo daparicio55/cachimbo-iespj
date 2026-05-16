@@ -29,5 +29,9 @@ class TrajeSeed extends Seeder
             'nombre' => 'Pregunta Sorteada',
             'video_path' => '/resources/videos/preguntasorteada.mp4'
         ]);
+        Traje::create([
+            'nombre' => 'Traje Tipico',
+            'video_path' => '/resources/videos/trajetipico.mp4'
+        ]);
     }
 }

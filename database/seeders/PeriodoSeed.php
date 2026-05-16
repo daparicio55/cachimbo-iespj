@@ -15,7 +15,7 @@ class PeriodoSeed extends Seeder
     {
         //
         Periodo::create([
-            'nombre' => '2025-1',
+            'nombre' => '2026-1',
             'activo' => true,
         ]);
     }
